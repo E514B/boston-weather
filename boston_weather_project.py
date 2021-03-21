@@ -9,7 +9,9 @@ dfglobal = pd.read_csv('global_weather.csv')
 
 boston_filled = dfboston.fillna(dfboston.mean())
 
-boston_filled['moving_average'] = boston_filled.iloc[:,1].ewm(span=7,adjust=False).mean()
+boston_filled['MA_7'] = boston_filled.avg_temp.rolling(7).mean().shift(-6)
 
-print(boston_filled.head(10))
+print(boston_filled.tail(20))
+
+
 
