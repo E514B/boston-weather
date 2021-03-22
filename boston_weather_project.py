@@ -5,18 +5,16 @@ import numpy as np
 dfboston = pd.read_csv('boston_weather.csv')
 dfglobal = pd.read_csv('global_weather.csv')
 
-print('The average temperature for Boston across the data set is', dfboston.avg_temp.mean())
-print('The average temperature for the globe across the data set is', dfglobal.avg_temp.mean())
-#print('The  temperature range for Boston is\n', 'Min', dfboston['avg_temp'].min(), 'Max', dfboston['avg_temp'].max())
-#print('The  temperature range for the globe is\n', 'Min', dfglobal['avg_temp'].min(), 'Max',dfglobal['avg_temp'].max())
+print('The average temperature for Boston across the data set is', dfboston.avg_temp.mean().round(2))
+print('The average temperature for the globe across the data set is', dfglobal.avg_temp.mean().round(2))
 
 bos_min= dfboston.loc[dfboston['avg_temp'] == dfboston['avg_temp'].min()]
 bos_max= dfboston.loc[dfboston['avg_temp'] == dfboston['avg_temp'].max()]
 glo_min= dfglobal.loc[dfglobal['avg_temp'] == dfglobal['avg_temp'].min()]
 glo_max= dfglobal.loc[dfglobal['avg_temp'] == dfglobal['avg_temp'].max()]
 
-print('The temperature range for Boston is:\n', bos_min, '\n', bos_max)
-print('The  temperature range for the globe is:\n', glo_min,'\n', glo_max)
+print('The temperature range for Boston is:\n', bos_min,'\n', bos_max)
+print('The temperature range for the globe is:\n', glo_min,'\n', glo_max)
 
 
 
